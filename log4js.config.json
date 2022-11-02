@@ -1,0 +1,66 @@
+{
+    "appenders": {
+        "app": {
+            "type": "console"
+        },
+        "traceFile": {
+            "type": "file",
+            "filename": "./log/traces.log",
+            "maxLogSize": 524288,
+            "numBackups": 3,
+            "compress": true
+        },
+        "traces": {
+            "type": "logLevelFilter",
+            "level": "TRACE",
+            "appender": "traceFile"
+        },
+        "debugFile": {
+            "type": "file",
+            "filename": "./log/debugs.log",
+            "maxLogSize": 524288,
+            "numBackups": 3,
+            "compress": true
+        },
+        "debugs": {
+            "type": "logLevelFilter",
+            "level": "DEBUG",
+            "appender": "debugFile"
+        },
+        "infoFile": {
+            "type": "file",
+            "filename": "./log/info.log",
+            "maxLogSize": 524288,
+            "numBackups": 3,
+            "compress": true
+        },
+        "infos": {
+            "type": "logLevelFilter",
+            "level": "INFO",
+            "appender": "infoFile"
+        },
+        "errorFile": {
+            "type": "file",
+            "filename": "./log/errors.log",
+            "maxLogSize": 524288,
+            "numBackups": 3,
+            "compress": true
+        },
+        "errors": {
+            "type": "logLevelFilter",
+            "level": "ERROR",
+            "appender": "errorFile"
+        }
+    },
+    "categories": {
+        "default": {
+            "appenders": [
+                "app",
+                "debugs",
+                "infos",
+                "errors"
+            ],
+            "level": "trace"
+        }
+    }
+}
