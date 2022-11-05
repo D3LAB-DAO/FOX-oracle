@@ -4,7 +4,9 @@ const { sendPriceMessage } = require('./telegram');
 const { getPrice } = require('./oracle');
 
 const CHAIN_NAME = process.env.CHAIN_NAME;
+
 const ADDRESS_WBNB = process.env.ADDRESS_WBNB;
+
 const ORACLE_INTERVAL = process.env.ORACLE_INTERVAL;
 
 async function parsePrice(chain, address) {
